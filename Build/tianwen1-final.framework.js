@@ -1,1 +1,2 @@
-// Unity framework logic
+// framework js content placeholder
+console.log('framework loaded');
