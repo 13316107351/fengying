@@ -1,3 +1,7 @@
+chcp 65001 > nul
+set PYTHONIOENCODING=utf-8
+set GIT_PYTHON_REFRACE=quiet
+
 @echo off
 cd /d "C:\Users\Administrator\fengying"
 
