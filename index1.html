@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>天问一号反推火箭 WebGL 演示</title>
+  <style>
+    html, body { margin: 0; padding: 0; background: black; height: 100%; overflow: hidden; }
+    #unityContainer { width: 100%; height: 100%; background: black; }
+  </style>
+</head>
+<body>
+  <div id="unityContainer"></div>
+  <script src="Build/tianwen1-final.framework.js"></script>
+  <script>
+    var unityInstance = {
+      Module: {
+        preRun: [],
+        postRun: [],
+        print: function(text) { console.log(text); },
+        canvas: (function() {
+          var canvas = document.createElement('canvas');
+          document.getElementById("unityContainer").appendChild(canvas);
+          return canvas;
+        })(),
+        locateFile: function(file) {
+          return "Build/" + file;
+        }
+      }
+    };
+    var script = document.createElement("script");
+    script.src = "Build/tianwen1-final.wasm";
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>
